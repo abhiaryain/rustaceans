@@ -31,6 +31,27 @@
 //  3. cargo: Rust’s build tool and package/dependency/crates manager.
 //  4. rust-analyzer: Rust’s language server.
 //  5. rustfmt: A tool for formatting Rust code and ensure consistent coding style.
+//  6. rustfix: A tool for automatically fixing lint warnings. Run `cargo fix` to use it.
+//  7. clippy: A tool for catching common mistakes and improving your Rust code. Run `cargo clippy` to use it.
+
+// Keywords
+//   Rust has a set of keywords that are reserved for use by the language. These keywords are used to declare things like variables, functions, structs, enums, traits, and more.
+//     Keywords Reserved for Future Use -> abstract, become, box, do, final, macro, override, priv, try, typeof, unsized, virtual, yield
+//     Keywords Currently in Use -> `as`, `async`, `await`, `break`, `const`, `continue`, `crate`, `dyn`, `else`, `enum`, `extern`, `false`, `fn`, `for`, `if`, `impl`, `in`, `let`, `loop`, `match`, `mod`, `move`, `mut`, `pub`, `ref`, `return`, `Self`, `self`, `static`, `struct`, `super`, `trait`, `true`, `type`, `unsafe`, `use`, `where`, `while`
+
+// Identifiers
+//   Identifiers are names of functions, variables, parameters, struct fields, modules, crates, constants, macros, static values, attributes, types, traits, or lifetimes.
+//   Identifiers are case sensitive.
+//   Identifiers cannot be start with digits.
+//   Identifiers cannot be a single underscore.
+//   Identifiers can only contains alphanumeric characters and underscores (except as raw identifiers).
+//   Keywords cannot be used as identifiers (except as raw identifiers)
+
+// Raw Identifiers
+//   Raw identifiers are the syntax that lets you use keywords where they wouldn’t normally be allowed. You use a raw identifier by prefixing a keyword with r#.
+//     e.g. `r#for` is a raw identifier for the `for` keyword.
+//   The Raw identifiers allow us to use keywords as identifiers. It allows us to use libraries written in a different Rust edition in which a keyword is not reserved.
+//     e.g. `try`` isn’t a keyword in the 2015 edition but is in the 2018, 2021, and 2024 editions. If you depend on a library that is written using the 2015 edition and has a try function, you’ll need to use the raw identifier syntax, `r#try` in this case, to call that function from your code on later editions.
 
 // Rust convention
 //   1. Use snake_case for variable names, functions, and file names.
@@ -52,7 +73,6 @@ fn main() {
 //   println!("Hello World"); - is a call to the println! macro, which prints the string to the standard output.
 
 // Every Rust program must have a `main` function that is the entry point of the program. In other words the `main` function is the first function that gets called when the program starts.
-
 
 // Good to know
 //   1. In Rust, packages of code are called crates.

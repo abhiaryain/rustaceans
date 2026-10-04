@@ -40,10 +40,10 @@ fn main() {
 //   Run `cargo doc`
 
 // Fix lint warnings
-//   Run `cargo fix`
+//   Run `cargo fix` - It uses `rustfix` to automatically fix lint warnings.
 
 // Format code
-//   Run `cargo fmt`
+//   Run `cargo fmt` - It uses `rustfmt` to format the code.
 
 // To see help for a cargo command
 // Run `cargo help` or `cargo --help`
