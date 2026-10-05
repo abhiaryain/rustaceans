@@ -55,6 +55,7 @@
 
 // Rust convention
 //   1. Use snake_case for variable names, functions, and file names.
+//   2. Use SCREAMING_SNAKE_CASE(snake_case in uppercase) for constant names.
 
 // Rust: Hello World Program
 fn main() {
