@@ -46,20 +46,20 @@
 //   Identifiers can only contains alphanumeric characters and underscores (except as raw identifiers).
 //   Keywords cannot be used as identifiers (except as raw identifiers)
 //   In Rust, _ is a reserved wildcard identifier used to ignore a value or match anything. It is not a normal variable or identifier.
-//     1. Ignore a value using let (i.e. `let _ = 10;`),
-//     2. Ignore function parameters (i.e. `fn example(_: i32) { ... }`)
-//     3. Use _ in match expressions (i.e. `match x { 1 => println!("One"),  _ => println!("Something else"), }`)
-//     4. Ignore tuple values (i.e. ` let (a, _, c) = (10, 20, 30);`)
-//     5. Ignore values in if let (i.e. `if let Some(_) = x { ... }`)
+//     1. Ignore a value using let (e.g. `let _ = 10;`),
+//     2. Ignore function parameters (e.g. `fn example(_: i32) { ... }`)
+//     3. Use _ in match expressions (e.g. `match x { 1 => println!("One"),  _ => println!("Something else"), }`)
+//     4. Ignore tuple values (e.g. ` let (a, _, c) = (10, 20, 30);`)
+//     5. Ignore values in if let (e.g. `if let Some(_) = x { ... }`)
 //     6. Use _ in closures as a parameter pattern
-//     7. Use _ in destructuring structs (i.e. `let User { name, age: _ } = user;`)
-//     8. Cannot use _ as a variable and retrieve its value (i.e. `let _ = 10; let b = _;`)
-//     9. Cannot use _ as a variable name to access its value (i.e. `let _ = 10; println!("{}", _);`)
-//    10. Cannot use _ in an expression (i.e. `let a = 10 + _;`)
-//    11. Cannot use _ as a function name (i.e. `fn _() { ... }`)
-//    12. Cannot use _ as a struct name (i.e. `struct _ { ... }`)
-//    13. Cannot use _ as a struct field name (i.e. `struct Example { _: i32, }`)
-//    14. Cannot return _ as a value (i.e. fn example() -> i32 { let _ = 10; }``)
+//     7. Use _ in destructuring structs (e.g. `let User { name, age: _ } = user;`)
+//     8. Cannot use _ as a variable and retrieve its value (e.g. `let _ = 10; let b = _;`)
+//     9. Cannot use _ as a variable name to access its value (e.g. `let _ = 10; println!("{}", _);`)
+//    10. Cannot use _ in an expression (e.g. `let a = 10 + _;`)
+//    11. Cannot use _ as a function name (e.g. `fn _() { ... }`)
+//    12. Cannot use _ as a struct name (e.g. `struct _ { ... }`)
+//    13. Cannot use _ as a struct field name (e.g. `struct Example { _: i32, }`)
+//    14. Cannot return _ as a value (e.g. fn example() -> i32 { let _ = 10; }``)
 
 // Raw Identifiers
 //   Raw identifiers are the syntax that lets you use keywords where they wouldn’t normally be allowed. You use a raw identifier by prefixing a keyword with r#.
