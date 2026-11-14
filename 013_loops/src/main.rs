@@ -49,11 +49,11 @@ fn loop_label() {
         loop {
             println!("remaining = {remaining}");
 
-            if(remaining == 9){
+            if remaining == 9 {
                 break;
             }
 
-            if(count == 2){
+            if count == 2 {
                 break 'counting_up remaining * 2;
             }
             remaining -= 1;

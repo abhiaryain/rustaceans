@@ -42,7 +42,24 @@
 //    when the owner goes out of scope, the value will be dropped.
 
 // 4. Memory & Allocation
-//    
+//    1. The memory must be requested from the memory allocator at runtime.
+//    2. We need a way of return this memory to the allocator when we’re done.
+//
+//    In languages with a garbage collector (GC), the GC keeps track of and cleans up memory that isn’t being used anymore, and we don’t need to think about it
+//
+//    In most languages without a GC, it’s our responsibility to identify when memory is no longer being used and to call code to explicitly free it, just as we did to request it.
+//        Doing this correctly has historically been a difficult programming problem,
+//        If we forget, we’ll waste memory,
+//        If we do it too early, we’ll have an invalid variable.
+//        If we do it twice, that’s a bug too.
+//        We need to pair exactly one allocate with exactly one free.
+//    Rust takes a different path: The memory is automatically returned once the variable that owns it goes out of scope. Rust automatically calls a special function called `drop` at the closing curly bracket.
+//    Note: In C++, this pattern of deallocating resources at the end of an item’s lifetime is sometimes called Resource Acquisition Is Initialization (RAII). The `drop` function in Rust does similar to RAII patterns.
+fn _drop() {
+    {
+        let s = String::from("hello"); // s comes into scope and valid from this point forward.
+    } // Here, scope is over, and s is no longer valid, There is a natural point at which we can return the memory of `s` to the allocator, Rust calls `drop` to return the memory to allocator.
+}
 
 // 5. Variable & Data Interacting with Move
 //    let x = 5;
