@@ -2,24 +2,24 @@
 //    The mechanics of passing a value to a function are similar to those when assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does.
 
 fn main() {
-    let s = String::from("hello"); // s comes into scope
+    let greet = String::from("Hello World"); // `greet` comes into scope
 
-    takes_ownership(s); // s's value moves into the function...
-                        // ... and so is no longer valid here
+    greeting(greet); // value of `greet` moves into the function `greeting`
+    // so `greet` no longer valid here
 
-    let x = 5; // x comes into scope
+    let age: i32 = 25; // `age` comes into scope
 
-    makes_copy(x); // Because i32 implements the Copy trait,
-                   // x does NOT move into the function,
-                   // so it's okay to use x afterward.
-} // Here, x goes out of scope, then s. However, because s's value was moved, nothing special happens.
+    print_age(age); // Because i32 implements the Copy trait,
+    // `age` does NOT move into the function,
+    // so it's okay to use `age` afterward.
+} // Here, `age` goes out of scope, then `greet`. However, because the value of `greet` was moved, nothing special happens.
 
-fn takes_ownership(some_string: String) {
-    // some_string comes into scope
-    println!("{some_string}");
-} // Here, some_string goes out of scope and `drop` is called. The backing memory is freed.
+fn greeting(greet: String) {
+    // `greet` comes into scope
+    println!("{greet}");
+} // Here, `greet` goes out of scope and `drop` is called. The backing memory is freed.
 
-fn makes_copy(some_integer: i32) {
-    // some_integer comes into scope
-    println!("{some_integer}");
-} // Here, some_integer goes out of scope. Nothing special happens.
+fn print_age(age: i32) {
+    // `age` comes into scope
+    println!("{age}");
+} // Here, `age` goes out of scope. Nothing special happens.

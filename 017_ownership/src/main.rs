@@ -57,8 +57,9 @@
 //    Note: In C++, this pattern of deallocating resources at the end of an item’s lifetime is sometimes called Resource Acquisition Is Initialization (RAII). The `drop` function in Rust does similar to RAII patterns.
 fn _drop() {
     {
-        let s = String::from("hello"); // s comes into scope and valid from this point forward.
-    } // Here, scope is over, and s is no longer valid, There is a natural point at which we can return the memory of `s` to the allocator, Rust calls `drop` to return the memory to allocator.
+        let greet = String::from("Hello World"); // `greet` comes into scope and valid from this point forward.
+        println!("{greet}");
+    } // Here, scope is over, and `greet` is no longer valid, There is a natural point at which we can return the memory of `greet` to the allocator, Rust calls `drop` to return the memory to allocator.
 }
 
 // 5. Variable & Data Interacting with Move
@@ -140,7 +141,7 @@ fn _drop() {
 fn _move() {
     let s1 = String::from("Hello");
     let s2 = s1; // s1 -> s2 (s1 is moved to s2)
-                 // println!("{s1}"); // Here, s1 is invalid, we will get an error `value borrowed here after move`
+    // println!("{s1}"); // Here, s1 is invalid, we will get an error `value borrowed here after move`
     println!("{s2}")
 }
 
